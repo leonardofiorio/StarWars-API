@@ -5,6 +5,7 @@ Requisitos:
 - Bson
 - Flask
 - Requests
+- Pytest
 
 Rotas para API:
 - '/planetas': listagem de planetas cadastrados
