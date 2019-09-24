@@ -11,19 +11,19 @@ app = Flask(__name__)
 
 @app.route('/planetas', methods=['GET'])
 def listar():
-    planetas = repository.listar()
+    planetas = dumps(repository.listar())
     return jsonify(planetas), 200
 
 
 @app.route('/planeta/id/<string:id>', methods=['GET'])
 def buscaPorId(id):
-    planeta = repository.buscarPorId(id)
+    planeta = dumps(repository.buscarPorId(id))
     return jsonify(planeta), 200
 
 
 @app.route('/planeta/nome/<string:nome>', methods=['GET'])
 def buscaPorNome(nome):
-    planeta = repository.buscarPorNome(nome)
+    planeta = dumps(repository.buscarPorNome(nome))
     return jsonify(planeta), 200
 
 

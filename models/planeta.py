@@ -33,16 +33,3 @@ class Planeta:
 
     def setQuantidadeFilmes(self, quantidade_filmes):
         self.quantidade_filmes = quantidade_filmes
-
-    @staticmethod
-    def construir_do_json(dados_json):
-        if dados_json is not None:
-            try:
-                return Planeta(dados_json.get('_id', None),
-                    dados_json['nome'],
-                    dados_json['terreno'],
-                    dados_json['clima'])
-            except KeyError as e:
-                raise Exception("Key not found in json_data: {}".format(e.message))
-        else:
-            raise Exception("Nenhum dado criado!")
